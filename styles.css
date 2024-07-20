@@ -1,0 +1,105 @@
+#icon-container {
+    display: flex; /* This will arrange children in a horizontal line */
+    flex-wrap: wrap; /* This allows the icons to wrap to the next line if needed */
+    padding: 20px;
+    justify-content: center;
+}
+
+#icons {
+    font-size: 30px;
+    width: 60px;
+    text-align: center;
+    
+    text-decoration: none;
+    margin: 5px 5px 20px 6px;
+}
+
+
+    .Portfolio1{
+        justify-content: center;
+        align-self: center;
+        text-align: center;
+        font-size: 35px;
+        font-weight: bold;
+        padding: 50px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center the container vertically */
+        padding: 500px 0px 600px 0px;
+        background-color: #d3d3d3; /* Gray background for the box */
+        border-radius: 30px;
+        width: 100%;
+        max-width: 800px; /* Adjusted for better responsiveness */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow for better visual appeal */
+        margin: 100px auto; /* Center the container horizontally */
+        height: 100vh; /* Ensure the container takes full viewport height */
+    }
+    
+    .Portfolio1 {
+        text-align: center;
+    }
+    
+    .main {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 20px;
+        width: 100%;
+    }
+    
+    button {
+        display: block;
+        margin: 10px 0;
+        width: 100%;
+        text-align: left;
+        background-color: #ffffff; /* White background for buttons */
+        border: 1px solid #ccc; /* Light gray border for buttons */
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    button a {
+        text-decoration: none;
+        color: #000; /* Black text color for links */
+    }
+    
+    /* Desktop view */
+    @media (min-width: 768px) {
+        .container {
+            width: 80%; /* Adjusted for better responsiveness on larger screens */
+        }
+    
+        .main {
+            padding: 20px;
+        }
+    }
+    
+    /* Mobile view */
+    @media (max-width: 767px) {
+        .main {
+            padding: 10px;
+            font-size: 16px;
+        }
+    
+        button {
+            font-size: 16px;
+        }
+    }
+    
