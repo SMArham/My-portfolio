@@ -43,7 +43,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center; /* Center the container vertically */
-        padding: 500px 0px 600px 0px;
+        padding: 600px 0px 600px 0px;
         background-color: #d3d3d3; /* Gray background for the box */
         border-radius: 30px;
         width: 100%;
@@ -103,3 +103,8 @@
         }
     }
     
+
+    html {
+        scroll-behavior: smooth;
+      }
+      
