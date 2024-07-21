@@ -4,7 +4,7 @@ Welcome to my portfolio! This website showcases my work and skills as a web deve
 
 ## About Me
 
-I am a passionate web developer with a strong background in both front-end and back-end technologies. I love creating dynamic and responsive web applications that provide excellent user experiences.
+I am a passionate web developer with a strong background in front-end  technologies. I love creating dynamic and responsive web applications that provide excellent user experiences.
 
 ## Skills and Technologies
 
