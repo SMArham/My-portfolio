@@ -88,6 +88,6 @@ Feel free to reach out to me for any inquiries or collaborations:
 - **Email**: [syedarhamreal@gmail.com](mailto:syedarhamreal@gmail.com
 )
 - **LinkedIn**: [linkedin.com/in/syedmuhammadarham](https://www.linkedin.com/in/syedmuhammadarham/)
-- **GitHub**: [/github.com/SMArham](https://github.com/SMArham)
+- **GitHub**: [github.com/SMArham](https://github.com/SMArham)
 
 Thank you for visiting my portfolio!
