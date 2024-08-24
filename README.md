@@ -85,9 +85,9 @@ Visit my [portfolio](https://my-portfolio-phi-six-59.vercel.app/) to see all my 
 
 Feel free to reach out to me for any inquiries or collaborations:
 
-- **Email**: [your-email@example.com](mailto:syedarhamreal@gmail.com
+- **Email**: [syedarhamreal@gmail.com](mailto:syedarhamreal@gmail.com
 )
-- **LinkedIn**: [your-linkedin-profile](https://www.linkedin.com/in/syedmuhammadarham/)
-- **GitHub**: [your-github-profile](https://github.com/SMArham)
+- **LinkedIn**: [linkedin.com/in/syedmuhammadarham](https://www.linkedin.com/in/syedmuhammadarham/)
+- **GitHub**: [/github.com/SMArham](https://github.com/SMArham)
 
 Thank you for visiting my portfolio!
