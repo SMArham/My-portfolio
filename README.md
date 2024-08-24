@@ -14,7 +14,6 @@ Here are some of the technologies I have worked with:
 - **CSS**
 - **Bootstrap**
 - **Python**
-- **React**
 - **JavaScript**
 - **Vercel**
 - **Git**
