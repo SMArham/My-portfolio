@@ -1,25 +1,25 @@
-# Syed Muhammad Arham | Software Engineering & AI/ML Portfolio
+# Syed Muhammad Arham | Data Scientist & Machine Learning Engineer Portfolio
 
 [![Live Portfolio](https://img.shields.io/badge/Live_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://my-portfolio-phi-six-59.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/syedmuhammadarham/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SMArham)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:syedarhamreal@gmail.com)
 
-Welcome to the official portfolio of **Syed Muhammad Arham**! I am a **Software Engineer** and **BS Computer Science student (2024 to 2028) at Iqra University** focused on building practical, data-driven software solutions. I turn ideas into working prototypes and high-performance applications, combining programming, algorithmic thinking, data, and problem-solving to tackle real-world challenges. I execute full-cycle development from **Concept &rarr; Prototype &rarr; Development &rarr; Testing &rarr; Deployment**, with continuous focus on performance, usability, and reliability.
+Welcome to the official portfolio of **Syed Muhammad Arham**! I am a **Data Scientist / Machine Learning Engineer** and **BS Computer Science student (2024 to 2028) at Iqra University** focused on building practical, data-driven software solutions. I turn ideas into working prototypes and high-performance applications, combining programming, algorithmic thinking, data, and machine learning to tackle real-world challenges. I execute full-cycle development from **Concept &rarr; Prototype &rarr; Development &rarr; Testing &rarr; Deployment**, with continuous focus on performance, usability, and reliability.
 
 ---
 
 ## 🚀 Selected Projects & Live Applications
 
 ### 1. [P&G Advertisement Budget Decision Intelligence Engine](https://decision-intelligence.syedarhamreal.workers.dev/)
-* **Description**: ML decision intelligence platform designed for FMCG media spend allocation and budget optimization. Incorporates K-Means clustering, fuzzy logic rules, statistical analysis, and Streamlit analytics to guide data-backed decisions.
-* **Tech Stack**: `Machine Learning`, `K-Means Clustering`, `Fuzzy Logic`, `Python`, `Streamlit`, `Data Science`, `Cloudflare Workers`
+* **Description**: ML decision intelligence platform designed for FMCG media spend allocation and budget optimization. Incorporates K-Means clustering, fuzzy logic rules, statistical analysis, Snappy Parquet feature caching, and Streamlit analytics to guide data-backed decisions.
+* **Tech Stack**: `Machine Learning`, `K-Means Clustering`, `Fuzzy Logic`, `Python`, `Pandas`, `NumPy`, `Streamlit`, `Data Science`, `Cloudflare Workers`
 * **Live Demo**: [decision-intelligence.syedarhamreal.workers.dev](https://decision-intelligence.syedarhamreal.workers.dev/)
 
 ---
 
 ### 2. [Student Performance Prediction Platform](https://student-performance-prediction-one-beryl.vercel.app/login.html)
-* **Description**: End-to-end AI/ML analytics platform forecasting student academic outcomes. Features interactive Chart.js dashboards, secure Supabase authentication, and high-performance FastAPI backends.
+* **Description**: End-to-end AI/ML analytics platform forecasting student academic outcomes across multiple educational tiers. Features interactive Chart.js dashboards, secure Supabase authentication, and high-performance FastAPI backends.
 * **Tech Stack**: `Python`, `FastAPI`, `Scikit-Learn`, `JavaScript`, `Chart.js`, `Supabase`, `REST APIs`, `Predictive Analytics`
 * **Live Demo**: [student-performance-prediction-one-beryl.vercel.app](https://student-performance-prediction-one-beryl.vercel.app/login.html)
 
@@ -27,7 +27,7 @@ Welcome to the official portfolio of **Syed Muhammad Arham**! I am a **Software 
 
 ### 3. [Cricket Tournament Tracker & Win Probability](https://cricket-tournament-tracker.vercel.app/)
 * **Description**: ML-powered tournament tracking and match win probability prediction system trained on historical and live match stats. Complete tournament management system with relational database schema design.
-* **Tech Stack**: `Machine Learning`, `Scikit-Learn`, `Flask`, `Microsoft SQL Server`, `Supabase`, `Database Design`, `Python`
+* **Tech Stack**: `Machine Learning`, `Scikit-Learn`, `Flask API`, `Microsoft SQL Server`, `Supabase`, `Database Design`, `Python`
 * **Live Demo**: [cricket-tournament-tracker.vercel.app](https://cricket-tournament-tracker.vercel.app/)
 
 ---
@@ -48,18 +48,18 @@ Welcome to the official portfolio of **Syed Muhammad Arham**! I am a **Software 
 
 | Category | Technologies & Tools |
 | :--- | :--- |
-| **Languages** | Python, C++, Java, JavaScript, SQL, HTML5, CSS3 |
-| **AI / Machine Learning & Data Science** | Scikit-Learn, K-Means Clustering, Fuzzy Logic, Predictive Analytics, Data Pipelines, Streamlit |
-| **Backend & Frameworks** | FastAPI, Flask, REST APIs, JavaFX, Bootstrap |
-| **Databases & Cloud** | Microsoft SQL Server, Supabase, MongoDB, Firebase, Vercel, Cloudflare Workers |
-| **Tools & Engineering Core** | Git, GitHub, Postman API Testing, Data Structures & Algorithms (DSA), Object-Oriented Programming (OOP), Automation |
+| **Languages** | Python, C++, Java, JavaScript, Dart, C#, SQL, HTML5, CSS3 |
+| **Data Science & AI / ML** | Scikit-Learn (ML Pipelines), Pandas, NumPy, Streamlit, Plotly, K-Means Clustering, Random Forest, Gradient Boosting, Fuzzy Logic Systems, SciPy, Snappy Parquet, Jupyter Notebooks, Predictive Analytics |
+| **Backend, Frameworks & APIs** | FastAPI, Flask API, REST APIs, Supabase RLS, JavaFX Desktop, Linux Shell Automation, Tailwind CSS, Bootstrap |
+| **Databases & Cloud** | Supabase (PostgreSQL), Microsoft SQL Server, SQLite Datamart, MongoDB, Firebase Realtime Database, Render, Vercel, Cloudflare Workers |
+| **Tools & Engineering Core** | Git, GitHub, Postman API Testing, Pytest, Data Structures & Algorithms (DSA), Object-Oriented Programming (OOP), Automation |
 
 ---
 
 ## 💡 What I Do Best
 
 * **P&G Advertisement Budget Decision Intelligence**: ML, K-Means, fuzzy logic, statistical analysis, and Streamlit.
-* **Software & API Engineering**: Build software using Python, C++, Java, JavaScript, SQL, APIs, and databases.
+* **Software & API Engineering**: Build software using Python, C++, Java, JavaScript, SQL, FastAPI, Flask API, and databases.
 * **Machine Learning & Predictive Systems**: Develop Machine Learning models, predictive systems, data pipelines, and analytics applications.
 * **DSA, OOP & Algorithmic Thinking**: Apply DSA, OOP, algorithmic thinking, automation, and real-time data processing to solve complex problems.
 * **Full-Cycle Execution**: Transform ideas into practical applications with a focus on clean architecture, performance, and scalability (Concept &rarr; Prototype &rarr; Development &rarr; Testing &rarr; Deployment).
@@ -88,7 +88,7 @@ Currently expanding skills in:
 
 Particularly interested in the intersection of **FinTech, Artificial Intelligence, IoT, Quantitative Finance, Algorithmic Systems, Real-Time Technologies**, and intelligent data-driven applications.
 
-Open to **Software Engineering, AI/ML, Data Science, and FinTech** opportunities, internships, and technical collaborations.
+Open to **Data Science, Machine Learning, AI Engineering, and Software Engineering** opportunities, internships, and technical collaborations.
 
 ---
 
@@ -113,6 +113,7 @@ Open to **Software Engineering, AI/ML, Data Science, and FinTech** opportunities
 ## 📬 Contact & Connect
 
 * **Full Name**: Syed Muhammad Arham
+* **Title**: Data Scientist / Machine Learning Engineer
 * **Email**: [syedarhamreal@gmail.com](mailto:syedarhamreal@gmail.com)
 * **LinkedIn**: [linkedin.com/in/syedmuhammadarham](https://www.linkedin.com/in/syedmuhammadarham/)
 * **GitHub**: [github.com/SMArham](https://github.com/SMArham)
