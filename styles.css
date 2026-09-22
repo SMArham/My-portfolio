@@ -1,110 +1,170 @@
-#icon-container {
-    display: flex; /* This will arrange children in a horizontal line */
-    flex-wrap: wrap; /* This allows the icons to wrap to the next line if needed */
-    padding: 20px;
-    justify-content: center;
+/* Custom Styles for Syed Muhammad Arham's Portfolio */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #0f172a;
+  --accent: #38bdf8;
+  --bg-light: #f8fafc;
 }
 
-#icons {
-    font-size: 30px;
-    width: 60px;
-    text-align: center;
-    
-    text-decoration: none;
-    margin: 5px 5px 20px 6px;
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
 
-    .Portfolio1{
-        justify-content: center;
-        align-self: center;
-        text-align: center;
-        font-size: 35px;
-        font-weight: bold;
-        padding: 50px;
-    }
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
 
+/* Glassmorphism Header */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+}
 
+/* Smooth Nav Link Underline */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
 
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2563eb;
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
 
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
 
+.nav-link.active {
+  color: #2563eb !important;
+  font-weight: 600;
+}
 
+/* Card Hover Elevation */
+.card-hover {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease;
+}
 
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  border-color: #93c5fd;
+}
 
+/* Featured Project Card */
+.project-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
+.project-card:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 16px 32px -8px rgba(37, 99, 235, 0.12);
+  transform: translateY(-5px);
+}
 
+/* Tech Badges */
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  background-color: #f1f5f9;
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
 
+.project-card:hover .tech-tag {
+  background-color: #eff6ff;
+  color: #1e40af;
+  border-color: #dbeafe;
+}
 
+/* Section Headings */
+.section-tag {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
 
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+/* Social Icon Buttons */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+}
 
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; /* Center the container vertically */
-        padding: 600px 0px 600px 0px;
-        background-color: #d3d3d3; /* Gray background for the box */
-        border-radius: 30px;
-        width: 100%;
-        max-width: 800px; /* Adjusted for better responsiveness */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow for better visual appeal */
-        margin: 100px auto; /* Center the container horizontally */
-        height: 100vh; /* Ensure the container takes full viewport height */
-    }
-    
-    .Portfolio1 {
-        text-align: center;
-    }
-    
-    .main {
-        font-size: 20px;
-        font-weight: bold;
-        padding: 20px;
-        width: 100%;
-    }
-    
-    button {
-        display: block;
-        margin: 10px 0;
-        width: 100%;
-        text-align: left;
-        background-color: #ffffff; /* White background for buttons */
-        border: 1px solid #ccc; /* Light gray border for buttons */
-        padding: 10px;
-        border-radius: 5px;
-    }
-    
-    button a {
-        text-decoration: none;
-        color: #000; /* Black text color for links */
-    }
-    
-    /* Desktop view */
-    @media (min-width: 768px) {
-        .container {
-            width: 80%; /* Adjusted for better responsiveness on larger screens */
-        }
-    
-        .main {
-            padding: 20px;
-        }
-    }
-    
-    /* Mobile view */
-    @media (max-width: 767px) {
-        .main {
-            padding: 10px;
-            font-size: 16px;
-        }
-    
-        button {
-            font-size: 16px;
-        }
-    }
-    
+.social-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px -2px rgba(37, 99, 235, 0.25);
+}
 
-    html {
-        scroll-behavior: smooth;
-      }
-      
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

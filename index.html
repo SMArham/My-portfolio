@@ -1,412 +1,986 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>Syed Muhammad Arham | Software Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Syed Muhammad Arham — Software Engineer and BSCS student at Iqra University. Practical, data-driven software solutions, AI/ML systems, and full-cycle application architecture." />
 
-
-
-
-
-
-
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Kaushan+Script&display=swap"
-    rel="stylesheet" />
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome 6 & Devicon & Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Alpine.js -->
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Stylesheet & Script -->
+  <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
-
-  <style type="text/tailwindcss">
-    body {
-      font-family: "Inter", sans-serif;
-    }
-
-    .logo-font {
-      font-family: "Kaushan Script", cursive;
-    }
-
-    .active {
-      font-weight: bold;
-      color: #1a202c; /* Change to your preferred active link color */
-    }
-  </style>
 </head>
 
-<body>
-  <!-- ==== Header ==== -->
-  <header x-data="{navbarOpen:false}" class="absolute sticky left-0 top-0 z-50 bg-white/90 w-full backdrop-blur">
-    <div class="mx-auto h-[90px] max-w-7xl px-8 md:px-6">
-      <div class="relative flex h-full items-center justify-between border-b border-slate-500/10">
-        <!-- logo -->
-        <div class="max-w-full w-[15rem]">
-          <a href="#">
-            <!-- <span class="logo-font text-xl">&lt;Usama Usman&#47; &gt;</span> -->
+<body class="bg-white text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header x-data="{ navbarOpen: false }" class="sticky top-0 z-50 glass-nav transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-6 md:px-8">
+      <div class="flex h-20 items-center justify-between">
+        
+        <!-- Top Left Brand: Syed Muhammad Arham Portfolio -->
+        <a href="#Home" class="group flex items-center gap-3">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/20 font-bold text-sm tracking-wider">
+            SMA
+          </span>
+          <div class="flex flex-col">
+            <span class="font-bold text-slate-900 text-base sm:text-lg leading-tight group-hover:text-blue-600 transition-colors">
+              Syed Muhammad Arham Portfolio
+            </span>
+            <span class="text-xs font-semibold text-blue-600 tracking-wide uppercase">Software Engineer</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden items-center gap-8 lg:flex">
+          <a href="#Home" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">Home</a>
+          <a href="#About" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">About</a>
+          <a href="#Services" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">What I Do</a>
+          <a href="#ToolsAndTechs" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">Skills</a>
+          <a href="#Portfolio" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">Projects</a>
+          <a href="#Contact" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">Contact</a>
+        </nav>
+
+        <!-- Header CTA Buttons -->
+        <div class="hidden items-center gap-3 lg:flex">
+          <a href="https://github.com/SMArham" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+            <i class="fa-brands fa-github text-lg"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/syedmuhammadarham/" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in text-lg text-[#0077b5]"></i>
+          </a>
+          <a href="mailto:syedarhamreal@gmail.com" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-medium text-white shadow-md shadow-blue-500/25 transition-all hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30">
+            <span>Get in Touch</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
         </div>
-        <!-- END logo -->
 
-        <!-- menu  -->
-        <div class="flex w-full items-center justify-between">
-          <nav x-transition :class="!navbarOpen && 'hidden'" id="navbarCollapse"
-            class="absolute right-0 top-[90px] w-full max-w-[350px] rounded-lg border border-black-200 bg-white py-5 px-6 shadow-lg shadow-black-400/5 transition-all lg:static lg:block lg:max-w-full lg:border-none lg:shadow-none lg:bg-transparent lg:px-0 lg-py-0">
-            <ul class="flex flex-col justify-center gap-8 lg:flex-row">
-              <li>
-                <a href="#Home"
-                  class="text-lg font-medium text-slate-700 duration-200 hover:font-bold lg:text-base">Home</a>
-              </li>
+        <!-- Mobile Menu Button -->
+        <button @click="navbarOpen = !navbarOpen" type="button" class="inline-flex items-center justify-center rounded-xl p-2.5 text-slate-600 hover:bg-slate-100 hover:text-slate-900 focus:outline-none lg:hidden" aria-label="Toggle navigation">
+          <i :class="navbarOpen ? 'fa-solid fa-xmark text-2xl' : 'fa-solid fa-bars text-xl'"></i>
+        </button>
 
-              <li>
-                <a href="#About"
-                  class="text-lg font-medium text-slate-700 duration-200 hover:font-bold lg:text-base">About</a>
-              </li>
-
-              <li>
-                <a href="#Services"
-                  class="text-lg font-medium text-slate-700 duration-200 hover:font-bold lg:text-base">Services</a>
-              </li>
-
-              <li>
-                <a href="#ToolsAndTechs"
-                  class="text-lg font-medium text-slate-700 duration-200 hover:font-bold lg:text-base">Tools and
-                  Techs</a>
-              </li>
-
-              <li>
-                <a href="#Portfolio"
-                  class="text-lg font-medium text-slate-700 duration-200 hover:font-bold lg:text-base">Portfolio</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <!-- END menu  -->
-
-        <!-- Menu Btn  -->
-
-        <!-- END Menu Btn  -->
       </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div x-show="navbarOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="border-b border-slate-200 bg-white px-6 py-5 shadow-xl lg:hidden">
+      <nav class="flex flex-col gap-4">
+        <a @click="navbarOpen = false" href="#Home" class="text-base font-medium text-slate-700 hover:text-blue-600">Home</a>
+        <a @click="navbarOpen = false" href="#About" class="text-base font-medium text-slate-700 hover:text-blue-600">About</a>
+        <a @click="navbarOpen = false" href="#Services" class="text-base font-medium text-slate-700 hover:text-blue-600">What I Do Best</a>
+        <a @click="navbarOpen = false" href="#ToolsAndTechs" class="text-base font-medium text-slate-700 hover:text-blue-600">Skills & Tech Stack</a>
+        <a @click="navbarOpen = false" href="#Portfolio" class="text-base font-medium text-slate-700 hover:text-blue-600">Selected Projects</a>
+        <a @click="navbarOpen = false" href="#Contact" class="text-base font-medium text-slate-700 hover:text-blue-600">Contact</a>
+        <div class="mt-2 flex items-center gap-3 pt-3 border-t border-slate-100">
+          <a href="https://github.com/SMArham" target="_blank" rel="noopener noreferrer" class="social-btn"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/syedmuhammadarham/" target="_blank" rel="noopener noreferrer" class="social-btn"><i class="fa-brands fa-linkedin-in text-[#0077b5]"></i></a>
+          <a href="mailto:syedarhamreal@gmail.com" class="flex-1 rounded-xl bg-blue-600 py-2.5 text-center text-sm font-medium text-white shadow hover:bg-blue-700">Email Me</a>
+        </div>
+      </nav>
     </div>
   </header>
-  <!-- ==== END Header ==== -->
 
-  <!-- ==== Hero ==== -->
-  <section id="Home" class="relative bg-white py-16 lg:pt-[100px]">
-    <div class="mx-auto max-w-7xl px-8 md:px-6">
-      <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-5/12">
-          <h1 class="text-slate-400 mt-9 mb-3 text-4xl leading-snug sm:text-[42px] lg:text-[50px] xl:text-[42px]">
-            Welcome to the <br>
-            <span class="text-slate-900 font-bold">
-              World of Innovation
-            </span>
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="Home" class="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white pt-10 pb-20 lg:pt-16 lg:pb-28">
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[750px] h-[320px] bg-blue-100/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    
+    <div class="mx-auto max-w-7xl px-6 md:px-8">
+      <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-blue-600 mb-3">
+            Software Engineer &bull; AI / ML Developer
+          </span>
+
+          <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.15]">
+            Syed Muhammad Arham
           </h1>
 
-          <p class="text-slate-500 mb-8 max-w-[480px] text-base text-justify">
-            I am Syed Muhammad Arham, a Frontend Developer passionate about creating stunning, functional web
-            applications. Combining a Computer Science background with creativity, I develop responsive interfaces and
-            seamless user experiences.
+          <p class="mt-2 text-xl font-semibold text-slate-700 sm:text-2xl">
+            Practical, <span class="gradient-text">Data-Driven Software</span> Solutions
           </p>
 
-        </div>
+          <p class="mt-5 text-base sm:text-lg leading-relaxed text-slate-600 max-w-2xl">
+            I am a Software Engineer and BSCS student at Iqra University focused on turning concepts into working prototypes and high-performance applications — combining programming, algorithmic thinking, data, and machine learning to tackle complex challenges.
+          </p>
 
-        <div class="hidden px-4 lg:block lg:w-1/12"></div>
+          <!-- Concept to Deployment Flow -->
+          <div class="mt-6 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-600 font-medium">
+            <span class="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-3 py-1.5 text-slate-800 border border-slate-200">
+              <i class="fa-solid fa-lightbulb text-amber-500"></i> Concept
+            </span>
+            <i class="fa-solid fa-arrow-right-long text-slate-400 text-xs"></i>
+            <span class="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-3 py-1.5 text-slate-800 border border-slate-200">
+              <i class="fa-solid fa-microchip text-indigo-500"></i> Prototype
+            </span>
+            <i class="fa-solid fa-arrow-right-long text-slate-400 text-xs"></i>
+            <span class="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-3 py-1.5 text-slate-800 border border-slate-200">
+              <i class="fa-solid fa-code text-cyan-600"></i> Development
+            </span>
+            <i class="fa-solid fa-arrow-right-long text-slate-400 text-xs"></i>
+            <span class="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-3 py-1.5 text-slate-800 border border-slate-200">
+              <i class="fa-solid fa-vial-circle-check text-emerald-600"></i> Testing
+            </span>
+            <i class="fa-solid fa-arrow-right-long text-slate-400 text-xs"></i>
+            <span class="inline-flex items-center gap-1.5 rounded-lg bg-blue-50 px-3 py-1.5 text-blue-700 border border-blue-200 font-semibold">
+              <i class="fa-solid fa-rocket text-blue-600"></i> Deployment
+            </span>
+          </div>
 
-        <div class="w-full p-16 bg-white lg:w-6/12">
-          <div class="lg:ml-auto lg:text-right">
-            <div class="relative z-10 inline-block pt-11 lg:pt-0">
-              <img src="./images/profile.png" alt="profile-pic" class="max-w-full lg:ml-auto" />
+          <!-- Hero Action Buttons -->
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="#Portfolio" class="inline-flex items-center gap-2.5 rounded-xl bg-blue-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-500/30 transition-all hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5">
+              <span>View Projects</span>
+              <i class="fa-solid fa-arrow-down text-sm"></i>
+            </a>
+            <a href="mailto:syedarhamreal@gmail.com" class="inline-flex items-center gap-2.5 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-700 shadow-sm transition-all hover:border-slate-400 hover:bg-slate-50 hover:text-slate-900">
+              <i class="fa-regular fa-envelope text-blue-600"></i>
+              <span>Contact Syed Muhammad Arham</span>
+            </a>
+          </div>
+
+          <!-- Direct Channels -->
+          <div class="mt-9 flex items-center gap-6 border-t border-slate-200/80 pt-6">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Profiles:</span>
+            <div class="flex items-center gap-4">
+              <a href="https://github.com/SMArham" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-slate-900 transition-colors" title="GitHub Profile">
+                <i class="fa-brands fa-github text-2xl"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/syedmuhammadarham/" target="_blank" rel="noopener noreferrer" class="text-[#0077b5] hover:opacity-85 transition-opacity" title="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin text-2xl"></i>
+              </a>
+              <a href="mailto:syedarhamreal@gmail.com" class="text-red-500 hover:opacity-85 transition-opacity" title="Email Syed Muhammad Arham">
+                <i class="fa-solid fa-envelope text-2xl"></i>
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- ==== END Hero ==== -->
 
-  <!-- ABOUT  -->
-  <section id="About" class="py-36">
-    <div class="mx-auto max-w-7xl px-8 md:px-6">
-      <div class="mb-5 sm:mb-10">
-        <span class="font-medium text-slate-900">About</span>
-        <h1 class="text-2xl font-bold text-slate-800 sm:text-3xl">
-          Get to Know About Me
-        </h1>
-      </div>
-
-      <!-- about img  -->
-      <div class="md:flex md:justify-between md:gap-6 xl:gap-10">
-        <div class="mb-6 max-h-[600px] overflow-hidden rounded-lg md:mb-0 md:w-5/12">
-          <img src="./images/about.svg" alt="about" class="h-full scale-125 sm:w-full sm:object-cover" />
-        </div>
-
-        <div class="md:w-6/12">
-          <div class="mb-16 flex flex-col">
-            <div class="mb-8 flex w-full items-center rounded-lg bg-slate-50 p-4 shadow-md shadow-slate-500/10">
-              <div
-                class="mr-6 flex h-[60px] w-full items-center justify-center overflow-hidden rounded bg-slate-500 bg-opacity-5 text-slate-500 sm:h-[70px] sm:max-w-[70px]">
-                <ion-icon name="school-outline" class="text-3xl"></ion-icon>
-              </div>
-              <div class="w-full">
-                <h4 class="mb-1 text-xl font-bold text-slate-700">
-                  Qualification
-                </h4>
-                <p class="text-base text-slate-400">
-                  BSCS - IQRA University , Karachi
-                </p>
+        <!-- Right Hero Profile Visual -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-sm">
+            <div class="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-blue-600 to-cyan-500 opacity-20 blur-xl"></div>
+            
+            <div class="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-3.5 shadow-2xl">
+              <img src="./images/profile.png" alt="Syed Muhammad Arham" class="w-full h-auto rounded-2xl object-cover" />
+              
+              <div class="mt-3.5 flex items-center justify-between rounded-xl bg-slate-50 p-3.5 border border-slate-100">
+                <div class="flex items-center gap-3">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white font-bold">
+                    <i class="fa-solid fa-code"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs font-bold text-slate-800">Syed Muhammad Arham</p>
+                    <p class="text-[11px] text-slate-500">Software Engineer</p>
+                  </div>
+                </div>
+                <span class="rounded-md bg-blue-100 px-2.5 py-1 text-[11px] font-semibold text-blue-700">BSCS</span>
               </div>
             </div>
-
-            <div class="mb-8 flex w-full items-center rounded-lg bg-slate-50 p-4 shadow-md shadow-slate-500/10">
-              <div
-                class="mr-6 flex h-[60px] w-full items-center justify-center overflow-hidden rounded bg-slate-500 bg-opacity-5 text-slate-500 sm:h-[70px] sm:max-w-[70px]">
-                <ion-icon name="location-outline" class="text-3xl"></ion-icon>
-              </div>
-              <div class="w-full">
-                <h4 class="mb-1 text-xl font-bold text-slate-700">
-                  Location
-                </h4>
-                <p class="text-base text-slate-400">
-                  Rafah-e-Aam Society , Malir , Karachi
-                </p>
-              </div>
-            </div>
-
-
           </div>
         </div>
+
       </div>
     </div>
   </section>
-  <!-- End ABOUT  -->
 
-  <!-- ==== SERVICE ==== -->
-  <section id="Services" class="py-36 bg-slate-900">
-    <div class="mx-auto max-w-7xl px-8 md:px-6">
-      <div class="text-center mb-16">
-        <span class="font-medium text-slate-200">Services</span>
-        <h1 class="text-2xl font-bold text-slate-50 sm:text-3xl">
-          Get My Amazing Services
-        </h1>
-        <p class="mx-auto mt-2 max-w-2xl text-slate-400 text-justify">
-          Unlock the full potential of your online presence with my exceptional services: Website Development for a
-          stunning and functional site, Content Marketing to captivate and engage your audience, and Digital Marketing
-          to amplify your reach and drive results. Let's elevate your brand together!
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section id="About" class="py-20 bg-white border-t border-slate-100">
+    <div class="mx-auto max-w-7xl px-6 md:px-8">
+      
+      <div class="mb-14 text-center max-w-3xl mx-auto">
+        <span class="section-tag">About Me</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+          About Syed Muhammad Arham
+        </h2>
+        <p class="mt-4 text-base text-slate-600 leading-relaxed text-justify sm:text-center">
+          I’m a Software Engineer and BSCS student at Iqra University focused on building practical, data-driven software solutions. I enjoy turning ideas into working prototypes and real applications, combining programming, algorithmic thinking, data, and problem-solving to tackle real-world challenges. I’m comfortable taking projects from concept &rarr; prototype &rarr; development &rarr; testing &rarr; deployment, while continuously improving performance, usability, and reliability.
         </p>
       </div>
 
-      <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 xl:gap-8">
-        <div
-          class="group flex cursor-pointer flex-col items-center rounded-xl border border-slate-50/10 bg-white px-5 py-8 shadow-lg shadow-slate-300/10 duration-200">
-          <img src="./images/digital.png" alt="" class="w-24" />
-          <h4 class="mt-3 mb-1 text-[17px] font-semibold text-slate-700 duration-200">
-            Digital Marketing
-          </h4>
-          <p class="text-center text-sm text-slate-500 duration-200">
-            Digital marketing leverages online platforms and tools to promote products or services, reaching target
-            audiences through methods like social media, and email campaigns. It combines data analytics and creative
-            strategies to drive engagement and conversions.
-          </p>
-        </div>
-
-        <div
-          class="group flex cursor-pointer flex-col items-center rounded-xl border border-slate-50/10 bg-white px-5 py-8 shadow-lg shadow-slate-300/10 duration-200">
-          <img src="./images/content.png" alt="" class="w-24" />
-          <h4 class="mt-3 mb-1 text-[17px] font-semibold text-slate-700 duration-200">
-            Content Marketing
-          </h4>
-          <p class="text-center text-sm text-slate-500 duration-200">
-            Content marketing focuses on creating and distributing valuable, relevant content to attract and engage a
-            target audience. Its goal is to build trust and drive profitable customer actions by addressing their needs
-            and interests.
-          </p>
-        </div>
-
-        <div
-          class="group flex cursor-pointer flex-col items-center rounded-xl border border-slate-50/10 bg-white px-5 py-8 shadow-lg shadow-slate-300/10 duration-200">
-          <img src="./images/website.png" alt="" class="w-24" />
-          <h4 class="mt-3 mb-1 text-[17px] font-semibold text-slate-700 duration-200">
-            Website Development
-          </h4>
-          <p class="text-center text-sm text-slate-500 duration-200">
-            Website development involves creating and maintaining websites, integrating design, functionality, and user
-            experience. It includes coding, content management, and optimization to ensure a seamless and engaging
-            online presence.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ==== END SERVICE ==== -->
-
-  <!-- Tools & Techs  -->
-  <section id="ToolsAndTechs" class="py-36 bg-slate-50">
-    <div class="mx-auto max-w-7xl px-8 md:px-6">
-      <div class="text-center mb-16">
-        <span class="font-medium text-slate-900">Tools & Techs</span>
-        <h1 class="text-2xl font-bold text-slate-800 sm:text-3xl">
-          Tools & Techs I Use
-        </h1>
-        <p class="mx-auto mt-2 max-w-2xl text-slate-600 text-justify">
-          I work with a diverse set of tools and technologies, including Python and JavaScript for programming, and
-          Vercel for deployment. My skills include Firebase for backend services, Bootstrap for responsive design, and
-          React for dynamic user interfaces. I use Git and GitHub for version control and collaboration.
-        </p>
-      </div>
-
-      <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-4 xl:gap-8">
-        <div
-          class="group flex cursor-pointer flex-col items-center rounded-xl border border-slate-50/10 bg-white px-5 py-8 shadow-lg shadow-slate-300/10 duration-200">
-          <img src="./images/html.png" class="w-24" />
-          <p class="font-bold">HTML</p>
-        </div>
-        <div
-          class="group flex cursor-pointer flex-col items-center rounded-xl border border-slate-50/10 bg-white px-5 py-8 shadow-lg shadow-slate-300/10 duration-200">
-          <img src="./images/css.png" class="w-24" />
-          <p class="font-bold">CSS</p>
-        </div>
-        <div
-          class="group flex cursor-pointer flex-col items-center rounded-xl border border-slate-50/10 bg-white px-5 py-8 shadow-lg shadow-slate-300/10 duration-200">
-          <img src="./images/bootstrap.png" class="w-24" />
-          <p class="font-bold">Bootstrap</p>
-        </div>
-
-        <div
-          class="group flex cursor-pointer flex-col items-center rounded-xl border border-slate-50/10 bg-white px-5 py-8 shadow-lg shadow-slate-300/10 duration-200">
-          <img src="./images/phyton.png" class="w-24" />
-          <p class="font-bold">Python</p>
-        </div>
+      <!-- About Details Grid -->
+      <div class="grid gap-8 lg:grid-cols-12 items-start">
         
-        <div
-          class="group flex cursor-pointer flex-col items-center rounded-xl border border-slate-50/10 bg-white px-5 py-8 shadow-lg shadow-slate-300/10 duration-200">
-          <img src="./images/javascript.png" class="w-24" />
-          <p class="font-bold">JavaScript</p>
+        <!-- Left: Academic & Location Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <div class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-5 shadow-sm">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white shadow-md shadow-blue-500/20">
+              <ion-icon name="school-outline" class="text-2xl"></ion-icon>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-slate-800">Academic Education</h3>
+              <p class="mt-1 text-sm font-bold text-blue-600">BS Computer Science (2024 &ndash; 2028)</p>
+              <p class="text-xs text-slate-500 mt-0.5">Iqra University, Karachi, Pakistan</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-5 shadow-sm">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-md shadow-emerald-500/20">
+              <ion-icon name="location-outline" class="text-2xl"></ion-icon>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-slate-800">Location</h3>
+              <p class="mt-1 text-sm font-bold text-emerald-600">Malir, Karachi, Pakistan</p>
+              <p class="text-xs text-slate-500 mt-0.5">Available for Onsite & Remote Opportunities</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-5 shadow-sm">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-500/20">
+              <i class="fa-solid fa-diagram-project text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-slate-800">Engineering Philosophy</h3>
+              <p class="mt-1 text-sm font-bold text-indigo-600">Clean Architecture & Modularity</p>
+              <p class="text-xs text-slate-500 mt-0.5">Scalable backends, reliable data models, responsive interfaces</p>
+            </div>
+          </div>
+
         </div>
 
-        <div
-          class="group flex cursor-pointer flex-col items-center rounded-xl border border-slate-50/10 bg-white px-5 py-8 shadow-lg shadow-slate-300/10 duration-200">
-          <img src="./images/vercel.png" class="w-24" />
-          <p class="font-bold">Vercel</p>
+        <!-- Right: Learning Focus & Availability Cards -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Learning & Focus Areas Box -->
+          <div class="rounded-2xl border border-blue-100 bg-blue-50/40 p-6 sm:p-7 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-white">
+                <i class="fa-solid fa-graduation-cap text-sm"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Learning & Focus Areas</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Currently expanding expertise in:
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-blue-700 shadow-xs border border-blue-100">Machine Learning</span>
+              <span class="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-blue-700 shadow-xs border border-blue-100">Data Science</span>
+              <span class="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-blue-700 shadow-xs border border-blue-100">Generative AI</span>
+              <span class="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-blue-700 shadow-xs border border-blue-100">Data Engineering</span>
+              <span class="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-blue-700 shadow-xs border border-blue-100">Algorithm Engineering</span>
+              <span class="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-blue-700 shadow-xs border border-blue-100">Data Visualization</span>
+              <span class="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-blue-700 shadow-xs border border-blue-100">Quantitative Analytics</span>
+              <span class="rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-blue-700 shadow-xs border border-blue-100">Real-Time Systems</span>
+            </div>
+          </div>
+
+          <!-- Interests & Availability Box -->
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 text-white">
+                <i class="fa-solid fa-handshake text-sm"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Interests & Availability</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Particularly interested in the intersection of <strong class="text-slate-800">FinTech, Artificial Intelligence, IoT, Quantitative Finance, Algorithmic Systems, Real-Time Technologies</strong>, and intelligent data-driven applications.
+            </p>
+            <div class="mt-4 rounded-xl bg-slate-50 p-4 border border-slate-200/80 flex items-center gap-3">
+              <div class="h-2.5 w-2.5 rounded-full bg-emerald-500 shrink-0"></div>
+              <p class="text-xs text-slate-700 font-medium">
+                Open to <strong class="text-slate-900">Software Engineering, AI/ML, Data Science, and FinTech</strong> opportunities and collaborations.
+              </p>
+            </div>
+          </div>
+
         </div>
-        <div
-          class="group flex cursor-pointer flex-col items-center rounded-xl border border-slate-50/10 bg-white px-5 py-8 shadow-lg shadow-slate-300/10 duration-200">
-          <img src="./images/git.png" class="w-24" />
-          <p class="font-bold">Git</p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== WHAT I DO BEST (CORE PILLARS) ==================== -->
+  <section id="Services" class="py-20 bg-slate-900 text-white">
+    <div class="mx-auto max-w-7xl px-6 md:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-blue-400 mb-2">Technical Capabilities</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          What I Do Best
+        </h2>
+        <p class="mt-3 text-slate-400 text-sm sm:text-base">
+          Engineering reliable, scalable software with algorithmic rigor and machine learning.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="rounded-2xl border border-slate-800 bg-slate-800/60 p-7 transition-all duration-300 hover:border-blue-500/50 hover:bg-slate-800/90 hover:-translate-y-1">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-5">
+            <i class="fa-solid fa-chart-line text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">P&G Advertisement Budget Decision Intelligence</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Developing decision intelligence systems for FMCG media spend allocation using machine learning, K-Means clustering, fuzzy logic, statistical analysis, and Streamlit for data-backed budget optimization.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-1.5">
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-blue-300">ML & K-Means</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-blue-300">Fuzzy Logic</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-blue-300">Streamlit</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-blue-300">Statistical Analysis</span>
+          </div>
         </div>
-        <div
-          class="group flex cursor-pointer flex-col items-center rounded-xl border border-slate-50/10 bg-white px-5 py-8 shadow-lg shadow-slate-300/10 duration-200">
-          <img src="./images/github.png" class="w-24" />
-          <p class="font-bold">GitHub</p>
+
+        <!-- Pillar 2 -->
+        <div class="rounded-2xl border border-slate-800 bg-slate-800/60 p-7 transition-all duration-300 hover:border-emerald-500/50 hover:bg-slate-800/90 hover:-translate-y-1">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-5">
+            <i class="fa-solid fa-server text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Software & API Engineering</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Building software with Python, C++, Java, JavaScript, SQL, APIs, and databases. Creating high-throughput REST APIs with FastAPI and Flask connected to relational and NoSQL databases.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-1.5">
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-emerald-300">FastAPI</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-emerald-300">Flask</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-emerald-300">REST APIs</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-emerald-300">SQL Server</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-emerald-300">Supabase</span>
+          </div>
         </div>
-        <div
-          class="group flex cursor-pointer flex-col items-center rounded-xl border border-slate-50/10 bg-white px-5 py-8 shadow-lg shadow-slate-300/10 duration-200">
-          <img src="./images/firebase.png" class="w-24" />
-          <p class="font-bold">Firebase</p>
+
+        <!-- Pillar 3 -->
+        <div class="rounded-2xl border border-slate-800 bg-slate-800/60 p-7 transition-all duration-300 hover:border-purple-500/50 hover:bg-slate-800/90 hover:-translate-y-1">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 mb-5">
+            <i class="fa-solid fa-brain text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Machine Learning & Predictive Systems</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Developing Machine Learning models, predictive systems, data pipelines, and analytics applications with Scikit-learn, validated via cross-validation and deployed for live inference.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-1.5">
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-purple-300">Scikit-Learn</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-purple-300">Predictive Analytics</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-purple-300">Data Pipelines</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-purple-300">Model Inference</span>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="rounded-2xl border border-slate-800 bg-slate-800/60 p-7 transition-all duration-300 hover:border-amber-500/50 hover:bg-slate-800/90 hover:-translate-y-1">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-5">
+            <i class="fa-solid fa-network-wired text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">DSA, OOP & Clean Architecture</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Applying DSA, OOP, algorithmic thinking, automation, and real-time data processing to solve complex problems with a focus on clean architecture, performance, and scalability.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-1.5">
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-amber-300">DSA</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-amber-300">OOP</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-amber-300">Automation</span>
+            <span class="rounded bg-slate-700/70 px-2.5 py-1 text-xs text-amber-300">Scalability</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== TOOLS & TECHS (SKILLS) ==================== -->
+  <section id="ToolsAndTechs" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="mx-auto max-w-7xl px-6 md:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="section-tag">Technical Stack</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+          Skills & Technologies
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">
+          Proven technologies and tools utilized across production and academic applications.
+        </p>
+      </div>
+
+      <!-- Tech Stack Categorized Grid -->
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        
+        <!-- Category 1: Languages -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div class="flex items-center gap-2.5 pb-3 border-b border-slate-100 mb-4">
+            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm">Languages</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-2.5">
+            <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors">
+              <i class="devicon-python-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">Python</span>
+            </div>
+            <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors">
+              <i class="devicon-cplusplus-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">C++</span>
+            </div>
+            <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors">
+              <i class="devicon-java-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">Java</span>
+            </div>
+            <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors">
+              <i class="devicon-javascript-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">JavaScript</span>
+            </div>
+            <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors">
+              <i class="fa-solid fa-database text-blue-600 text-base"></i>
+              <span class="text-xs font-semibold text-slate-700">SQL</span>
+            </div>
+            <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors">
+              <i class="devicon-html5-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">HTML5</span>
+            </div>
+            <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-blue-50 transition-colors col-span-2">
+              <i class="devicon-css3-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">Cascading Style Sheets (CSS)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: AI / ML & Data Science -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div class="flex items-center gap-2.5 pb-3 border-b border-slate-100 mb-4">
+            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-50 text-purple-600">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm">AI & Data Science</h3>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-purple-50 transition-colors">
+              <i class="devicon-scikitlearn-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">Scikit-Learn</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-purple-50 transition-colors">
+              <i class="devicon-streamlit-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">Streamlit</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-purple-50 transition-colors">
+              <i class="fa-solid fa-circle-nodes text-purple-600 text-base"></i>
+              <span class="text-xs font-semibold text-slate-700">K-Means Clustering</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-purple-50 transition-colors">
+              <i class="fa-solid fa-chart-pie text-indigo-600 text-base"></i>
+              <span class="text-xs font-semibold text-slate-700">Predictive Analytics</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-purple-50 transition-colors">
+              <i class="fa-solid fa-diagram-project text-pink-600 text-base"></i>
+              <span class="text-xs font-semibold text-slate-700">Fuzzy Logic & Decision Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Frameworks & Backends -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div class="flex items-center gap-2.5 pb-3 border-b border-slate-100 mb-4">
+            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm">Frameworks & APIs</h3>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-emerald-50 transition-colors">
+              <i class="devicon-fastapi-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">FastAPI</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-emerald-50 transition-colors">
+              <i class="devicon-flask-original text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">Flask</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-emerald-50 transition-colors">
+              <i class="fa-solid fa-arrows-split-up-and-left text-emerald-600 text-base"></i>
+              <span class="text-xs font-semibold text-slate-700">REST APIs</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-emerald-50 transition-colors">
+              <i class="fa-brands fa-java text-red-600 text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">JavaFX</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-emerald-50 transition-colors">
+              <i class="devicon-bootstrap-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">Bootstrap (Framework)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Databases, Cloud & Tools -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div class="flex items-center gap-2.5 pb-3 border-b border-slate-100 mb-4">
+            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <h3 class="font-bold text-slate-800 text-sm">Databases & Tools</h3>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-amber-50 transition-colors">
+              <i class="devicon-microsoftsqlserver-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">Microsoft SQL Server</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-amber-50 transition-colors">
+              <i class="devicon-supabase-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">Supabase</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-amber-50 transition-colors">
+              <i class="devicon-mongodb-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">MongoDB</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-amber-50 transition-colors">
+              <i class="devicon-postman-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">Postman API Testing</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-amber-50 transition-colors">
+              <i class="devicon-git-plain colored text-lg"></i>
+              <span class="text-xs font-semibold text-slate-700">Git & GitHub</span>
+            </div>
+            <div class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-50 hover:bg-amber-50 transition-colors">
+              <i class="fa-solid fa-cloud-arrow-up text-blue-500 text-base"></i>
+              <span class="text-xs font-semibold text-slate-700">Vercel & Cloudflare</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tech Stack Icons Bar -->
+      <div class="mt-10 rounded-2xl bg-white p-5 border border-slate-200 shadow-sm flex flex-wrap items-center justify-center gap-6 sm:gap-8">
+        <div class="flex items-center gap-2 text-slate-700 font-semibold text-xs sm:text-sm">
+          <i class="devicon-python-plain colored text-lg"></i> Python
+        </div>
+        <div class="flex items-center gap-2 text-slate-700 font-semibold text-xs sm:text-sm">
+          <i class="devicon-cplusplus-plain colored text-lg"></i> C++
+        </div>
+        <div class="flex items-center gap-2 text-slate-700 font-semibold text-xs sm:text-sm">
+          <i class="devicon-java-plain colored text-lg"></i> Java
+        </div>
+        <div class="flex items-center gap-2 text-slate-700 font-semibold text-xs sm:text-sm">
+          <i class="devicon-javascript-plain colored text-lg"></i> JavaScript
+        </div>
+        <div class="flex items-center gap-2 text-slate-700 font-semibold text-xs sm:text-sm">
+          <i class="devicon-fastapi-plain colored text-lg"></i> FastAPI
+        </div>
+        <div class="flex items-center gap-2 text-slate-700 font-semibold text-xs sm:text-sm">
+          <i class="devicon-flask-original text-lg"></i> Flask
+        </div>
+        <div class="flex items-center gap-2 text-slate-700 font-semibold text-xs sm:text-sm">
+          <i class="devicon-scikitlearn-plain colored text-lg"></i> Scikit-Learn
+        </div>
+        <div class="flex items-center gap-2 text-slate-700 font-semibold text-xs sm:text-sm">
+          <i class="devicon-bootstrap-plain colored text-lg"></i> Bootstrap
+        </div>
+        <div class="flex items-center gap-2 text-slate-700 font-semibold text-xs sm:text-sm">
+          <i class="devicon-firebase-plain colored text-lg"></i> Firebase
+        </div>
+        <div class="flex items-center gap-2 text-slate-700 font-semibold text-xs sm:text-sm">
+          <i class="devicon-vercel-original text-lg"></i> Vercel
         </div>
       </div>
+
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="container">
-      <ul>
-        <li>
-          <h1 class="Portfolio1" id="Portfolio" >Portfolio</h1>
-          <div class="main">
-            <button>
-              <a href="https://to-do-list-ay08g000x-arhams-projects-14cbaa64.vercel.app/"> • To-Do List App
-              </a>
-            </button><br>
-            <button>
-              <a href="https://quiz-app-kappa-lilac.vercel.app/"> • Quiz App
-              </a>
-            </button><br>
-            <button>
-              <a href="https://firebase-data.vercel.app/"> • Real-Time Firebase Data Website
-              </a>
-            </button><br>
-            <button>
-              <a href="https://curd-app-eight.vercel.app/"> • CRUD App
-              </a>
-            </button><br>
-            <button>
-              <a href="https://auth-app-five-beta.vercel.app/"> • Authentication App</a>
-            </button><br>
-            <button>
-              <a href="https://zyer-website-j3ea.vercel.app/"> • Private Aviation website</a>
-            </button><br>
-            <button>
-              <a href="https://dark-mode-liart.vercel.app/"> • Light Mode And Dark Mode using CSS</a>
-            </button><br>
-            <button>
-              <a href="https://calculator-2-0-ebon.vercel.app/"> • Calculator</a>
-            </button><br>
-            <button>
-              <a href="https://stop-watch-flame.vercel.app/"> • Stop Watch</a>
-            </button><br>
-            <button>
-              <a href="https://sample-form-using-html.vercel.app/"> • Sample form using HTML</a>
-            </button><br>
-            <button>
-              <a href="https://chess-board-using-html-and-css.vercel.app/"> • Chess Board using HTML and CSS</a>
-            </button><br>
-            <button>
-              <a href="https://practice-saylani-clone-website.vercel.app/"> • Saylani Website clone</a>
-            </button><br>
-            <button>
-              <a href="https://marksheet-in-javascript.vercel.app/"> • Marksheet using Javascript</a>
-            </button><br>
-            <button>
-              <a href="https://periodic-table-using-html.vercel.app/"> • Periodic Table using HTML</a>
-            </button><br>
-            <button>
-              <a href="https://mini-c-log-calculator-using-javascript.vercel.app/"> • Mini Calculator in console using
-                Javascript</a>
-            </button><br>
-
-          </div>
-        </li>
-      </ul>
-    </div>
-
-
-
-
-
   </section>
-  <!-- END Tools & Techs -->
 
+  <!-- ==================== SELECTED PROJECTS ==================== -->
+  <section id="Portfolio" class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-6 md:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="section-tag">Portfolio & Showcase</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+          Selected Projects & Practical Experience
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">
+          Data-driven applications, machine learning systems, and robust software architectures.
+        </p>
+      </div>
 
+      <!-- Featured Projects Grid -->
+      <div class="grid gap-8 lg:grid-cols-3">
+        
+        <!-- Project 1: Decision Intelligence -->
+        <div class="project-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="rounded-md bg-blue-100 px-2.5 py-1 text-xs font-bold text-blue-700">
+                Decision Intelligence
+              </span>
+              <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1">
+                <i class="fa-solid fa-circle text-[8px]"></i> Live
+              </span>
+            </div>
+            
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+              P&G Advertisement Budget Decision Intelligence Engine
+            </h3>
+            
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+              ML decision intelligence platform for FMCG advertising budget optimization. Incorporates K-Means clustering, fuzzy logic inferencing, and statistical distributions deployed on Cloudflare Workers & Streamlit for media spend planning.
+            </p>
 
+            <div class="mt-5 flex flex-wrap gap-1.5">
+              <span class="tech-tag"><i class="fa-solid fa-brain text-[10px]"></i> Machine Learning</span>
+              <span class="tech-tag"><i class="fa-solid fa-circle-nodes text-[10px]"></i> K-Means</span>
+              <span class="tech-tag"><i class="fa-solid fa-microchip text-[10px]"></i> Fuzzy Logic</span>
+              <span class="tech-tag"><i class="devicon-python-plain colored text-xs"></i> Python</span>
+              <span class="tech-tag"><i class="devicon-streamlit-plain colored text-xs"></i> Streamlit</span>
+            </div>
+          </div>
 
+          <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
+            <a href="https://decision-intelligence.syedarhamreal.workers.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors">
+              <span>Open Live Engine</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+            <span class="text-xs text-slate-400 mono">syedarhamreal.workers.dev</span>
+          </div>
+        </div>
 
+        <!-- Project 2: Student Performance Prediction -->
+        <div class="project-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="rounded-md bg-emerald-100 px-2.5 py-1 text-xs font-bold text-emerald-700">
+                AI / ML Platform
+              </span>
+              <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1">
+                <i class="fa-solid fa-circle text-[8px]"></i> Live
+              </span>
+            </div>
+            
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+              Student Performance Prediction Platform
+            </h3>
+            
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+              AI/ML platform forecasting student academic outcomes. Engineered with Scikit-learn predictive models, interactive Chart.js visualization, high-speed FastAPI backend services, and secure Supabase database persistence.
+            </p>
 
+            <div class="mt-5 flex flex-wrap gap-1.5">
+              <span class="tech-tag"><i class="devicon-fastapi-plain colored text-xs"></i> FastAPI</span>
+              <span class="tech-tag"><i class="devicon-scikitlearn-plain colored text-xs"></i> Scikit-Learn</span>
+              <span class="tech-tag"><i class="devicon-supabase-plain colored text-xs"></i> Supabase</span>
+              <span class="tech-tag"><i class="devicon-javascript-plain colored text-xs"></i> JavaScript</span>
+              <span class="tech-tag"><i class="fa-solid fa-chart-pie text-[10px]"></i> Chart.js</span>
+            </div>
+          </div>
 
-  <div id="icon-container">
+          <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
+            <a href="https://student-performance-prediction-one-beryl.vercel.app/login.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors">
+              <span>Open Prediction Portal</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+            <span class="text-xs text-slate-400 mono">vercel.app</span>
+          </div>
+        </div>
 
+        <!-- Project 3: Cricket Tournament Tracker -->
+        <div class="project-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="rounded-md bg-purple-100 px-2.5 py-1 text-xs font-bold text-purple-700">
+                Predictive Analytics
+              </span>
+              <span class="text-xs font-semibold text-emerald-600 flex items-center gap-1">
+                <i class="fa-solid fa-circle text-[8px]"></i> Live
+              </span>
+            </div>
+            
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+              Cricket Tournament Tracker & Win Probability
+            </h3>
+            
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+              ML prediction platform determining match win probabilities from historical and live tournament statistics. Built using Flask, Scikit-learn, and database schema architecture in Microsoft SQL Server & Supabase.
+            </p>
 
-    <a id="icons" href="https://github.com/SMArham" class="fa fa-github"></a>
-    <a id="icons" href="syedarhamreal@gmail.com" class="fa fa-envelope"></a>
-    <a id="icons" href="https://www.linkedin.com/in/syedmuhammadarham/" class="fa fa-linkedin"></a>
+            <div class="mt-5 flex flex-wrap gap-1.5">
+              <span class="tech-tag"><i class="devicon-flask-original colored text-xs"></i> Flask</span>
+              <span class="tech-tag"><i class="devicon-scikitlearn-plain colored text-xs"></i> Scikit-Learn</span>
+              <span class="tech-tag"><i class="devicon-microsoftsqlserver-plain colored text-xs"></i> SQL Server</span>
+              <span class="tech-tag"><i class="devicon-supabase-plain colored text-xs"></i> Supabase</span>
+              <span class="tech-tag"><i class="fa-solid fa-baseball text-[10px]"></i> ML Prediction</span>
+            </div>
+          </div>
 
+          <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
+            <a href="https://cricket-tournament-tracker.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors">
+              <span>View Tournament Tracker</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+            <span class="text-xs text-slate-400 mono">vercel.app</span>
+          </div>
+        </div>
 
-  </div>
+      </div>
+
+      <!-- Systems & Software Projects -->
+      <div class="mt-8 grid gap-8 md:grid-cols-2">
+        
+        <div class="project-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="rounded-md bg-amber-100 px-2.5 py-1 text-xs font-bold text-amber-800">
+                System Automation
+              </span>
+              <span class="text-xs font-semibold text-slate-400">Core Systems</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Linux System Health Monitor</h3>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+              Automated Linux server health and resource monitoring application. Collects CPU, disk, memory, and process metrics, generates automated system health reports, and dispatches email notifications upon threshold breaches.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-1.5">
+              <span class="tech-tag"><i class="devicon-python-plain colored text-xs"></i> Python</span>
+              <span class="tech-tag"><i class="devicon-bash-plain text-xs"></i> Bash</span>
+              <span class="tech-tag"><i class="devicon-linux-plain text-xs"></i> Linux OS</span>
+              <span class="tech-tag"><i class="fa-solid fa-envelope text-[10px]"></i> Email Alerts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="rounded-md bg-indigo-100 px-2.5 py-1 text-xs font-bold text-indigo-700">
+                Object-Oriented Programming (OOP)
+              </span>
+              <span class="text-xs font-semibold text-slate-400">Desktop Software</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Bank & Student Management Systems</h3>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+              Desktop management applications built in Java (JavaFX GUI) and C++. Implements OOP design patterns, user account roles, transaction recording, and file handling for data persistence.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-1.5">
+              <span class="tech-tag"><i class="devicon-java-plain colored text-xs"></i> Java</span>
+              <span class="tech-tag"><i class="fa-brands fa-java text-xs"></i> JavaFX</span>
+              <span class="tech-tag"><i class="devicon-cplusplus-plain colored text-xs"></i> C++</span>
+              <span class="tech-tag"><i class="fa-solid fa-folder-open text-[10px]"></i> File Handling</span>
+              <span class="tech-tag"><i class="fa-solid fa-shield-halved text-[10px]"></i> OOP Design</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Additional Foundational Projects Section -->
+      <div x-data="{ showAll: false }" class="mt-14 rounded-3xl border border-slate-200 bg-slate-50/70 p-6 sm:p-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-200">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Foundational Web Applications</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+              Web utilities, user interfaces, and early development milestones.
+            </p>
+          </div>
+          <button @click="showAll = !showAll" type="button" class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700 shadow-sm border border-slate-200 hover:bg-slate-100 hover:text-blue-600 transition-all">
+            <span x-text="showAll ? 'Show Fewer' : 'Explore All (14 Projects)'"></span>
+            <i :class="showAll ? 'fa-solid fa-chevron-up text-xs' : 'fa-solid fa-chevron-down text-xs'"></i>
+          </button>
+        </div>
+
+        <!-- Grid of Links -->
+        <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          
+          <a href="https://to-do-list-ay08g000x-arhams-projects-14cbaa64.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+            <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+              <i class="fa-solid fa-list-check text-blue-500"></i> To-Do List Application
+            </span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+          </a>
+
+          <a href="https://quiz-app-kappa-lilac.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+            <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+              <i class="fa-solid fa-circle-question text-purple-500"></i> Interactive Quiz App
+            </span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+          </a>
+
+          <a href="https://firebase-data.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+            <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+              <i class="fa-solid fa-fire text-amber-500"></i> Real-Time Firebase Website
+            </span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+          </a>
+
+          <a href="https://curd-app-eight.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+            <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+              <i class="fa-solid fa-database text-emerald-500"></i> CRUD Operations App
+            </span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+          </a>
+
+          <a href="https://auth-app-five-beta.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+            <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+              <i class="fa-solid fa-key text-red-500"></i> Authentication System
+            </span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+          </a>
+
+          <a href="https://zyer-website-j3ea.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+            <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+              <i class="fa-solid fa-plane text-sky-500"></i> Private Aviation Website
+            </span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+          </a>
+
+          <!-- Expandable items -->
+          <template x-if="showAll">
+            <div class="contents">
+              <a href="https://dark-mode-liart.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+                <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+                  <i class="fa-solid fa-moon text-indigo-500"></i> Light & Dark Mode CSS
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+              </a>
+
+              <a href="https://calculator-2-0-ebon.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+                <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+                  <i class="fa-solid fa-calculator text-blue-500"></i> Web Calculator 2.0
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+              </a>
+
+              <a href="https://stop-watch-flame.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+                <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+                  <i class="fa-solid fa-stopwatch text-rose-500"></i> Stopwatch Application
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+              </a>
+
+              <a href="https://sample-form-using-html.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+                <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+                  <i class="fa-solid fa-table-list text-teal-500"></i> Structured HTML Form
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+              </a>
+
+              <a href="https://chess-board-using-html-and-css.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+                <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+                  <i class="fa-solid fa-chess-board text-slate-700"></i> CSS Grid Chess Board
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+              </a>
+
+              <a href="https://practice-saylani-clone-website.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+                <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+                  <i class="fa-solid fa-clone text-orange-500"></i> Saylani Clone Page
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+              </a>
+
+              <a href="https://marksheet-in-javascript.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+                <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+                  <i class="fa-solid fa-graduation-cap text-indigo-500"></i> Academic Marksheet
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+              </a>
+
+              <a href="https://periodic-table-using-html.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+                <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+                  <i class="fa-solid fa-flask-vial text-cyan-500"></i> HTML Periodic Table
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+              </a>
+
+              <a href="https://mini-c-log-calculator-using-javascript.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl bg-white p-3.5 border border-slate-200 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all group">
+                <span class="text-xs font-semibold text-slate-700 group-hover:text-blue-600 flex items-center gap-2">
+                  <i class="fa-solid fa-terminal text-emerald-500"></i> Console Calculator
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400 group-hover:text-blue-600"></i>
+              </a>
+            </div>
+          </template>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT & FOOTER ==================== -->
+  <section id="Contact" class="py-20 bg-slate-900 text-white border-t border-slate-800">
+    <div class="mx-auto max-w-7xl px-6 md:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-blue-400 mb-2">Connect</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          Contact Syed Muhammad Arham
+        </h2>
+        <p class="mt-3 text-slate-400 text-sm sm:text-base">
+          Open for Software Engineering, AI/ML, Data Science, and FinTech roles, internships, and collaborations.
+        </p>
+      </div>
+
+      <!-- Contact Cards -->
+      <div class="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto">
+        
+        <!-- Email -->
+        <a href="mailto:syedarhamreal@gmail.com" class="group flex flex-col items-center justify-center rounded-2xl border border-slate-800 bg-slate-800/60 p-6 text-center transition-all duration-300 hover:border-blue-500 hover:bg-slate-800/90 hover:-translate-y-1">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all mb-4">
+            <i class="fa-regular fa-envelope text-xl"></i>
+          </div>
+          <h4 class="font-bold text-white text-base">Direct Email</h4>
+          <p class="text-xs text-slate-400 mt-1">syedarhamreal@gmail.com</p>
+          <span class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
+            Send Message <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/syedmuhammadarham/" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center justify-center rounded-2xl border border-slate-800 bg-slate-800/60 p-6 text-center transition-all duration-300 hover:border-sky-500 hover:bg-slate-800/90 hover:-translate-y-1">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 group-hover:bg-[#0077b5] group-hover:text-white transition-all mb-4">
+            <i class="fa-brands fa-linkedin-in text-xl"></i>
+          </div>
+          <h4 class="font-bold text-white text-base">LinkedIn Profile</h4>
+          <p class="text-xs text-slate-400 mt-1">linkedin.com/in/syedmuhammadarham</p>
+          <span class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-sky-400 group-hover:text-sky-300">
+            Connect on LinkedIn <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </span>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/SMArham" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center justify-center rounded-2xl border border-slate-800 bg-slate-800/60 p-6 text-center transition-all duration-300 hover:border-slate-600 hover:bg-slate-800/90 hover:-translate-y-1">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-700/50 text-slate-200 group-hover:bg-white group-hover:text-slate-900 transition-all mb-4">
+            <i class="fa-brands fa-github text-xl"></i>
+          </div>
+          <h4 class="font-bold text-white text-base">GitHub Repositories</h4>
+          <p class="text-xs text-slate-400 mt-1">github.com/SMArham</p>
+          <span class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 group-hover:text-white">
+            Explore Repositories <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </span>
+        </a>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="mt-16 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>
+          &copy; 2026 Syed Muhammad Arham. All rights reserved.
+        </p>
+        <div class="flex items-center gap-6">
+          <a href="#Home" class="hover:text-slate-300 transition-colors">Back to Top &uarr;</a>
+          <a href="https://my-portfolio-phi-six-59.vercel.app/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors">Live Deployment</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 </body>
-
 </html>
